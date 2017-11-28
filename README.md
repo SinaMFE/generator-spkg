@@ -56,7 +56,7 @@ PS: 默认脚手架会帮助安装npm包的依赖，如果没有安装则可能�
 
 ## 目录说明
 ```
-├── README.md  组件的readme文档，会显示在类似于http://cnpm.sina.com.cn/package/@mfelibs/generator-spkg的页面上，供大家查看，请将组件的api，调用方式，使用方式准确及时的更新到readme中
+├── README.md  组件的readme文档,供大家查看，请将组件的api，调用方式，使用方式准确及时的更新到readme中
 ├── dist   存放组件输出的UMD脚本资源和demo的文件夹，本文件夹所有的文件都是通过npm run build生成的，不能进行手动更改，会被命令覆盖掉。
 ├── eslintrc.yml 验证静态脚本格式的eslint配置文件
 ├── marauder.config.js 工程化配置，目前暂时无用
