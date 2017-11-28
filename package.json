@@ -1,0 +1,24 @@
+{
+    "name": "generator-spkg",
+    "version": "1.0.3",
+    "description": "脚手架：用于创建挖掘机对应组件的通用模板，为统一开发方式",
+    "main": "generators/index.js",
+    "scripts": {
+        "test": "mocha"
+    },
+    "files": [
+        "generators"
+    ],
+    "keywords": [
+        "yeoman-generator"
+    ],
+    "homepage": "",
+    "bugs": {
+        "url": ""
+    },
+    "author": "fengwan <fengwan@staff.sina.com.cn>",
+    "license": "ISC",
+    "dependencies": {
+        "yeoman-generator": "^1.1.1"
+    }
+}
