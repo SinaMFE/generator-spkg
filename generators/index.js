@@ -5,8 +5,7 @@ const simpleFiles = {
   '.gitlab-ci.yml': '.gitlab-ci.yml',
   '.gitignore': '.gitignore',
   'marauder.config.js': 'marauder.config.js',
-  'README.md': 'README.md',
-  'yarn.lock': 'yarn.lock'
+  'README.md': 'README.md'
 }
 const tplFiles = {}
 
@@ -20,51 +19,64 @@ module.exports = generators.extend({
     ])
   },
   prompting: function() {
-      return this.prompt([{
-          name: 'name',
-          message: '请输入组件名称，组件名称为@mfelibs/{组件名称}，\n 组件命名请参考http://wiki.intra.sina.com.cn\n/pages/viewpage.action?pageId=124420634\n',
-          validate: function(input) {
-              if (input.indexOf("@mfelibs") != 0) {
-                  return ('必须添加@mfelibs域');
-              } else return true;
-          }
-      }, {
-          name: 'description',
-          message: '组件描述,必须填写，请务必准确，\n同学们需要通过组件描述来识别该组件的功能\n',
-          default: ''
-      }, {
-          name: 'version',
-          message: 'Version',
-          default: '0.0.1'
-      }, {
-          name: 'repository',
-          message: '目前必须填写，并且需要首先将组件建立到https://gitlab.weibo.cn/SINA_MFE_COMPONENTS组下面',
-          validate: function(input) {
-              if (input.indexOf("SINA_MFE_COMPONENTS") < 0) {
-                  return ('放在https://gitlab.weibo.cn/SINA_MFE_COMPONENTS组下面');
-              } else return true;
-          }
-      }, {
-          name: 'homepage',
-          message: '暂时用来存放demo的外链地址，不必填'
-      }, {
-          name: 'authorName',
-          message: 'Author name',
-          store: true
-      }, {
-          name: 'authorEmail',
-          message: 'Author email',
-          store: true
-      }]).then(function(answers) {
-          this.description = answers.description;
-          this.name = answers.name;
-          this.authorName = answers.authorName;
-          this.authorEmail = answers.authorEmail;
-          this.version = answers.version;
-          this.repository = answers.repository ;
-          this.log('app name', answers.name);
-          this.log('cool feature', answers.cool);
-      }.bind(this));
+    return this.prompt([
+      {
+        name: 'name',
+        message:
+          '请输入组件名称，组件名称为@mfelibs/{组件名称}，\n 组件命名请参考http://wiki.intra.sina.com.cn\n/pages/viewpage.action?pageId=124420634\n',
+        validate: function(input) {
+          if (input.indexOf('@mfelibs') != 0) {
+            return '必须添加@mfelibs域'
+          } else return true
+        }
+      },
+      {
+        name: 'description',
+        message:
+          '组件描述,必须填写，请务必准确，\n同学们需要通过组件描述来识别该组件的功能\n',
+        default: ''
+      },
+      {
+        name: 'version',
+        message: 'Version',
+        default: '0.0.1'
+      },
+      {
+        name: 'repository',
+        message:
+          '目前必须填写，并且需要首先将组件建立到https://gitlab.weibo.cn/SINA_MFE_COMPONENTS组下面',
+        validate: function(input) {
+          if (input.indexOf('SINA_MFE_COMPONENTS') < 0) {
+            return '放在https://gitlab.weibo.cn/SINA_MFE_COMPONENTS组下面'
+          } else return true
+        }
+      },
+      {
+        name: 'homepage',
+        message: '暂时用来存放demo的外链地址，不必填'
+      },
+      {
+        name: 'authorName',
+        message: 'Author name',
+        store: true
+      },
+      {
+        name: 'authorEmail',
+        message: 'Author email',
+        store: true
+      }
+    ]).then(
+      function(answers) {
+        this.description = answers.description
+        this.name = answers.name
+        this.authorName = answers.authorName
+        this.authorEmail = answers.authorEmail
+        this.version = answers.version
+        this.repository = answers.repository
+        this.log('app name', answers.name)
+        this.log('cool feature', answers.cool)
+      }.bind(this)
+    )
   },
 
   writing() {
@@ -98,8 +110,8 @@ module.exports = generators.extend({
   },
 
   end() {
-        this.log(
-          "\
+    this.log(
+      "\
                                 ,;'`    ,.                           \n\
                            ,   ';;;   ;;;`                           \n\
                          ,';  ';;', ,;;;:  `;;'                      \n\
@@ -128,7 +140,7 @@ module.exports = generators.extend({
                        @#                                            \n\
                        #                                             \n\
     "
-        )
+    )
   },
 
   _copyPackagejson(source, dest) {
