@@ -4,10 +4,11 @@ const simpleFiles = {
   '.eslintrc.yml': '.eslintrc.yml',
   '.gitlab-ci.yml': '.gitlab-ci.yml',
   '.gitignore': '.gitignore',
-  'marauder.config.js': 'marauder.config.js',
+  'marauder.config.js': 'marauder.config.js'
+}
+const tplFiles = {
   'README.md': 'README.md'
 }
-const tplFiles = {}
 
 module.exports = generators.extend({
   initializing() {
