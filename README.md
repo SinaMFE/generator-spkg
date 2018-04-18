@@ -10,8 +10,9 @@
             npm install -g yarn
     * MacOS
 
-            curl -o- -L https://yarnpkg.com/install.sh | bash
-    * 测试：输入yarn -v 可以看到版本号则安装成功
+            brew update
+            brew install yarn
+* 测试：输入yarn -v 可以看到版本号则安装成功
 
 * 设置yarn的仓库 ,如果是内网，则指向内网cnpm仓库。请小伙伴们酌情配置。
 
