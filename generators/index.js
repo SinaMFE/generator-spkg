@@ -41,7 +41,7 @@ module.exports = generators.extend({
       {
         name: 'version',
         message: 'Version',
-        default: '0.0.1'
+        default: '1.0.0'
       },
       {
         name: 'repository',
